@@ -78,7 +78,7 @@ function App() {
     }
   }
 
-  /*TESTE-001*/ const [cont, setCont] = useState({});
+  /*TESTE - 001*/ const [cont, setCont] = useState({});
 
   function aoClicar(id){ 
     const marcador = marcadorAtual();
@@ -93,7 +93,7 @@ function App() {
       });
 
 
-/* ESTÁ FUNCIONANDO-001 *//*      setCasa((casaAntiga) => {
+/* ESTÁ FUNCIONANDO - 001 *//*      setCasa((casaAntiga) => {
         const novaCasa = [...casaAntiga];
         novaCasa[id - 1] = { ...novaCasa[id - 1], valor: marcador };
         registrarJogada(marcador);
@@ -104,7 +104,7 @@ function App() {
   }
 
 
-/* teste-001 */ useEffect(()=>{
+/* teste - 001 */ useEffect(()=>{
   const marcador = marcadorAtual();
   setCasa((casaAntiga) => {
     const novaCasa = [...casaAntiga];
