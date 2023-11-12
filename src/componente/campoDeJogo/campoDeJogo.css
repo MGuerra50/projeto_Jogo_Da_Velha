@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.fundo{
+    position: absolute;/*SEM ISSO, O TAMANHO "height" não funciona a menos que seja por px, mas PORCENTAGEM NÃO FUNCIONA!*/
+    width: 100%;
+    height: 100%;
+    /* background-image:url(urus.jpg); */
+    background-size: cover;
+    background-position: center;
+    display: inline-flex;
+    justify-content: center;
+    /* align-items: center; */
+    top: 15%;
+}
+/*___________________________CABECALHO_____________________________________________*/
+/* .posicaoTitulo{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: block;
+    padding: 15px;
+    height: 40px;
+    width: 40%;
+    position: absolute;
+    justify-content: start;
+    text-align: start;
+    align-items: start;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 0 0 20px 0;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    border-color: black;
+}
+@media (max-width: 1120px) {
+    .posicaoTitulo{
+        width: 100%;
+    }
+}
+.titulo{
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    justify-items: baseline;
+    z-index: 1;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 35px;
+} */
+/*____________________________________________________________________________*/
+div .tabuleiro{
+    margin-top: 0;
+    height: 25rem;
+    width: 25rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* position: relative; */
+    border: solid 1px black;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 2.5);
+    transition: 1.5s;
+    display: flex;
+    /* align-content: space-between; */
+}
+@media (orientation: portrait) {
+    .tabuleiro{
+        margin-top: 15%;
+        scale: 90%;
+    }
+}
+
+div .tabuleiro:hover{
+    border: solid 1px white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 2.5);
+}
+
+.casaDoTabuleiro{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    gap: 3px;
+}
+@media (orientation: portrait) {
+    .casaDoTabuleiro{
+        scale: 95%;
+    }    
+}
+
+.celula{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex; 
+    justify-content: center;
+    align-items: end;
+    /* top: 0; */
+    font-size: 100px;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    /* justify-content: space-between; */
+}
+.celula:hover{
+    scale: 102%;
+    z-index: 1;
+    border: 1px solid white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 1);
+    backdrop-filter: blur(1px);
+}
+@media (orientation: portrait) {
+    .celula{
+        scale: 97%;
+    }    
+}

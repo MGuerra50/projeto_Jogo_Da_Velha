@@ -1,0 +1,92 @@
+.players{
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 35px 50px;
+    /* gap: 5px; */
+    /* border: 2px solid black; */
+    position: fixed;
+    bottom: 0;
+}
+.primeiraLinha{
+    width: 100%;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 250px auto 250px;
+    grid-template-rows: 35px;
+    /* gap: 5px; */
+    /* border: 2px solid black; */
+}
+.secao1{
+    background: linear-gradient(-165deg, transparent 50%, rgba(255, 255, 255, 0.3) 50%);
+}
+.secao2{
+    background-color: transparent;
+}
+.secao3{
+    background: linear-gradient(165deg, transparent 50%, rgba(255, 255, 255, 0.3) 50%);
+}
+
+.placar1{
+    display: flex;
+    justify-content: start;
+    margin-left: 15%;
+    font-weight: 700;
+    font-size: x-large;
+}
+.placar2{
+    display: flex;
+    justify-content: end;
+    margin-right: 15%;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.placar{
+    width: 100%;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 50px 150px auto auto 150px 50px;
+}
+
+.marcador1{
+    display: flex;
+    font-size: xx-large;
+    justify-content: center;
+    background-color:  rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.marcador2{
+    display: flex;
+    font-size: xx-large;
+    justify-content: center;
+    background-color:  rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.jogador1{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5%;
+}
+.jogador2{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5%;
+}
+
+.divisoria1{
+    background: linear-gradient(-161deg, transparent 50%, rgba(255, 255, 255, 0.5) 50%);
+}
+.divisoria2{
+    background: linear-gradient(161deg, transparent 50%, rgba(255, 255, 255, 0.5) 50%);
+}
+
