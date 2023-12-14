@@ -36,9 +36,9 @@ div .tabuleiro{
     position: relative;
     border: solid 1px black;
     border-radius: 15px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     box-shadow: 0 0 20px rgba(0, 0, 0, 2.5);
-    transition: 1.5s;
+    transition: 1s;
     display: flex;
 }
 @media (orientation: portrait) {
@@ -67,7 +67,7 @@ div .tabuleiro{
 }
 
 div .tabuleiro:hover{
-    border: solid 1px white;
+    border: solid 1px rgba(210, 180, 140, 1);
     box-shadow: 0 0 20px rgba(255, 255, 255, 2.5);
 }
 
