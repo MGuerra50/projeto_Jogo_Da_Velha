@@ -20,7 +20,7 @@
     border-color: black;
     z-index: 1;
 }
-@media (max-width: 1120px) {
+@media (max-width: 1200px) {
     .posicaoTitulo{
         width: 100%;
     }

@@ -52,19 +52,29 @@
 }
 
 .marcador1{
+    color: #fff;
     display: flex;
     font-size: xx-large;
     justify-content: center;
     background-color:  rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
+.marcador1:hover{
+    text-shadow: 0 0 15px white;
+}
+
 .marcador2{
+    color: #fff;
     display: flex;
     font-size: xx-large;
     justify-content: center;
     background-color:  rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
+.marcador2:hover{
+    text-shadow: 0 0 15px white;
+}
+
 
 .jogador1{
     display: flex;
@@ -90,3 +100,15 @@
     background: linear-gradient(161deg, transparent 50%, rgba(255, 255, 255, 0.5) 50%);
 }
 
+#alterarPlayers:hover{
+    cursor: pointer;
+}
+
+.teste{
+    width: 100px;
+    height: 50px;
+}
+.testeDiv{
+    width: 100px;
+    height: 50px;
+}

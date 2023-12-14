@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CampoDeJogo from "./componente/campoDeJogo";
 import Cabecalho from './componente/cabecalho';
 import Placar from './componente/placar';
@@ -55,9 +55,11 @@ function App() {
     }
   ];
   const [player, setPlayer] = useState(playersDoJogo);
+  const [campeaoRegistrado, setCampeaoRegistrado] = useState([]);
 
   
   function marcadorAtual(marcador = "X"){
+    /*Envia o Marcador*/
     if(listaJogadas.length === 0){
       return marcador;
     } else {
@@ -68,6 +70,7 @@ function App() {
   }
 
   function registrarJogada (jogada){
+    /*Jogada Enviada Para a Lista de Jogadas*/
     if(listaJogadas.length===0){
       listaJogadas.push({valor: jogada});
     }else{
@@ -78,43 +81,18 @@ function App() {
     }
   }
 
-  /*TESTE - 001*/ const [cont, setCont] = useState({});
-
   function aoClicar(id){ 
     const marcador = marcadorAtual();
-    if(casa[id-1].valor === ''){
-
-      setCont(contAntigo=>{
-        console.log('Estou dentro do SetCont')
-        return {
-          idAtual: id,
-          contador: contAntigo.contador + 1
-      };
-      });
-
-
-/* ESTÁ FUNCIONANDO - 001 *//*      setCasa((casaAntiga) => {
-        const novaCasa = [...casaAntiga];
+    if(casa[id-1].valor === ''){     
+        const novaCasa = [...casa];
         novaCasa[id - 1] = { ...novaCasa[id - 1], valor: marcador };
-        registrarJogada(marcador);
-        verificaCampeao(novaCasa);
-        return novaCasa;
-      });*/
+        if(campeaoRegistrado.length < 3){
+          registrarJogada(marcador);
+          verificaCampeao(novaCasa);
+          setCasa(novaCasa);
+        }
     }
   }
-
-
-/* teste - 001 */ useEffect(()=>{
-  const marcador = marcadorAtual();
-  setCasa((casaAntiga) => {
-    const novaCasa = [...casaAntiga];
-    novaCasa[cont.idAtual - 1] = { ...novaCasa[cont.idAtual - 1], valor: marcador };
-    registrarJogada(marcador);
-    verificaCampeao(novaCasa);
-    return novaCasa;
-  });
-}, [cont]);
-
 
   function verificaCampeao(jogadasDaPartida){
 
@@ -143,20 +121,21 @@ function App() {
     if(campeaoDaPartida.length===3){
       exibeCampeao(campeaoDaPartida)
     }
-    
     return;
   }
 
-  function exibeCampeao(campeao){
-    console.log(playersDoJogo);
-    const playerParaAtualizar = campeao[0].valor === playersDoJogo[0].marcador? 0 : 1;
-    setPlayer(()=>{
-      const novoPlacar = [...playersDoJogo];
-      novoPlacar[playerParaAtualizar].placarIndividual += 1; //corrigir CHAMADAS ADICIonais do clique e que contabilizam vários pontos!/
-      return novoPlacar;
-    });
+  function exibeCampeao(campeao){ 
+    const playerParaAtualizar = campeao[0].valor === player[0].marcador? 0 : 1;
+    const novoPlacar = [...player];
+    novoPlacar[playerParaAtualizar].placarIndividual += 1;
+    setPlayer(novoPlacar);
+    setCampeaoRegistrado([...campeao]);
+  }
 
-    console.log('CAMPEÃO:  ', campeao,' 🔸');
+  function reiniciarPartida(){
+    const estadoInicial = [...campoJogavel];
+    setCasa(estadoInicial);
+    setCampeaoRegistrado([]);
   }
 
 
@@ -164,7 +143,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Cabecalho/>
-        <CampoDeJogo verifica = {verificaCampeao} tabuleiro = {casa} aoClicar = {aoClicar}/>
+        <CampoDeJogo reiniciar = {reiniciarPartida} tabuleiro = {casa} aoClicar = {aoClicar}/>
         <Placar jogadores = {player}/>
       </header>
     </div>

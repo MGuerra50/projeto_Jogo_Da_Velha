@@ -1,6 +1,7 @@
+import { TbReload } from 'react-icons/tb'
 import './campoDeJogo.css';
 
-const CampoDeJogo = ({verifica, tabuleiro, aoClicar})=>{
+const CampoDeJogo = ({reiniciar, tabuleiro, aoClicar})=>{
 
     function idCasaTabuleiro (objeto){
         const id = objeto.id;
@@ -9,18 +10,24 @@ const CampoDeJogo = ({verifica, tabuleiro, aoClicar})=>{
 
     return (
         <div className='fundo'>
-            <div className='tabuleiro'>
-                <section className='casaDoTabuleiro'>
-                    {tabuleiro.map(casaTabuleiro=><div 
-                        key={idCasaTabuleiro(casaTabuleiro)}
-                        onClick={()=>{
-                            return aoClicar(idCasaTabuleiro(casaTabuleiro))
-                        }}
-                        className='celula'>
-                            {`${casaTabuleiro.valor}`}
-                        </div>)}
-                </section>
+
+            <div className='base'>
+                <div className='tabuleiro'>
+                    <section className='casaDoTabuleiro'>
+                        {tabuleiro.map(casaTabuleiro=><div 
+                            key={idCasaTabuleiro(casaTabuleiro)}
+                            onClick={()=>{
+                                return aoClicar(idCasaTabuleiro(casaTabuleiro))
+                            }}
+                            className='celula'>
+                                {`${casaTabuleiro.valor}`}
+                            </div>)}
+                    </section>
+                </div>
             </div>
+                <section className='botoes'>
+                    <TbReload className = 'reiniciar' onClick = {()=>reiniciar()}/> 
+                </section>
         </div>
     );
 }

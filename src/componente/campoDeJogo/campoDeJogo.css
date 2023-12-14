@@ -1,52 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .fundo{
-    position: absolute;/*SEM ISSO, O TAMANHO "height" não funciona a menos que seja por px, mas PORCENTAGEM NÃO FUNCIONA!*/
+    position: absolute;
     width: 100%;
     height: 100%;
-    /* background-image:url(urus.jpg); */
     background-size: cover;
     background-position: center;
-    display: inline-flex;
+    display: inline-block;
     justify-content: center;
-    /* align-items: center; */
-    top: 15%;
+    bottom: 0;
 }
-/*___________________________CABECALHO_____________________________________________*/
-/* .posicaoTitulo{
-    position: relative;
-    top: 0px;
-    left: 0px;
-    display: block;
-    padding: 15px;
-    height: 40px;
-    width: 40%;
+
+.base{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 20%;
     position: absolute;
-    justify-content: start;
-    text-align: start;
-    align-items: start;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 0 0 20px 0;
-    border-bottom: 2px solid;
-    border-right: 2px solid;
-    border-color: black;
+    transition: 0.3s;
 }
-@media (max-width: 1120px) {
-    .posicaoTitulo{
-        width: 100%;
+@media (max-height: 600px) {
+    .base{
+        bottom: 12%;
     }
 }
-.titulo{
-    position: relative;
-    text-align: center;
-    justify-content: center;
-    justify-items: baseline;
-    z-index: 1;
-    font-family: 'Press Start 2P', sans-serif;
-    font-size: 35px;
-} */
-/*____________________________________________________________________________*/
+
 div .tabuleiro{
     margin-top: 0;
     height: 25rem;
@@ -55,19 +33,36 @@ div .tabuleiro{
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* position: relative; */
+    position: relative;
     border: solid 1px black;
     border-radius: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(0, 0, 0, 2.5);
     transition: 1.5s;
     display: flex;
-    /* align-content: space-between; */
 }
 @media (orientation: portrait) {
     .tabuleiro{
         margin-top: 15%;
         scale: 90%;
+    }
+}
+@media (max-width: 1200px) {
+    .tabuleiro{
+        margin-top: 15%;
+        scale: 90%;
+    }
+}
+@media (max-height: 600px) {
+    .tabuleiro{
+        margin-top: 15%;
+        scale: 80%;
+    }
+}
+@media (max-height: 550px) {
+    .tabuleiro{
+        margin-top: 15%;
+        scale: 60%;
     }
 }
 
@@ -103,12 +98,10 @@ div .tabuleiro:hover{
     display: flex; 
     justify-content: center;
     align-items: end;
-    /* top: 0; */
     font-size: 100px;
     color: black;
     font-weight: 700;
     cursor: pointer;
-    /* justify-content: space-between; */
 }
 .celula:hover{
     scale: 102%;
@@ -121,4 +114,25 @@ div .tabuleiro:hover{
     .celula{
         scale: 97%;
     }    
+}
+
+.botoes{
+    display: flex;
+    bottom: 14%;
+    left: 50%;
+    position: absolute;
+}
+.reiniciar{
+    color: white;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+.reiniciar:hover{
+    cursor: pointer;
+    scale: 120%;
+    transform: rotate(360deg);
+    transform-origin: center;
 }
